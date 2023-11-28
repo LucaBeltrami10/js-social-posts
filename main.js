@@ -117,7 +117,11 @@ likeButtons.forEach((button) => {
 })
 
 
-
+/* function likeUp(numbersOflikes){
+    if(numbersOflikeslike + 1){
+        return 
+    }
+} */
 
 
 /* 
