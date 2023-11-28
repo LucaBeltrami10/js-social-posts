@@ -111,24 +111,23 @@ const likeCounter = document.querySelectorAll('#like-counter-1');
 console.log(likeCounter)
 
 likeButtons.forEach((button, index) => {
-    button.addEventListener('click', function(element){
+    button.addEventListener('click', function(element,){
         element.preventDefault();
         button.classList.toggle('like-button--liked');
         
         previousLike = likeCounter[index].innerText;
         console.log(previousLike)
         
-
-        likeUp()
+        likeUp(previousLike, likeCounter[index])
     });
 })
 
 
 function likeUp(previousLike, likeNow ){
-    if(likeNow == previousLike){
-        return likeNow = likeNow + 1;
-    }else if(likeNow == previousLike + 1){
-        return likeNow
+    if(likeNow.innerText == previousLike){
+        return likeNow.innerHTML = likeNow.innerText + 1;
+    }else if(likeNow.innerText == previousLike + 1){
+        return likeNow.innerHTML == likeNow.innerText - 1;
     }
 }
 
