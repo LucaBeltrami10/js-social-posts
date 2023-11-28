@@ -112,15 +112,21 @@ likeButtons.forEach((button) => {
     button.addEventListener('click', function(element){
         element.preventDefault();
         button.classList.toggle('like-button--liked');
+        
+        
+
+        likeUp()
     });
 })
 
 
-/* function likeUp(previousLike, ){
-    if(numbersOflikeslike + 1){
-        return 
+function likeUp(previousLike, likeNow ){
+    if(likeNow == previousLike){
+        return likeNow = likeNow + 1;
+    }else if(likeNow == previousLike + 1){
+        return likeNow
     }
-} */
+}
 
 
 /* 
