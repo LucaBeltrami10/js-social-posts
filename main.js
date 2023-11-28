@@ -104,7 +104,9 @@ posts.forEach((post, index) => {
     newPost.innerHTML = templateLiteralsPost;
     container.appendChild(newPost);
 
-})
+});
+
+const likeButton = document.querySelector('a.like-button');
 
 
 
