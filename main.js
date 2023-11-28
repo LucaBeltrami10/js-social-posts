@@ -56,6 +56,7 @@ const posts = [
     }
 ];
 
+const container = document.getElementById('container');
 
 
 
