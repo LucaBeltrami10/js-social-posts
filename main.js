@@ -62,39 +62,16 @@ const container = document.getElementById('container');
 posts.forEach((post, index) => {
 
     const randomMonthAgo = Math.floor(Math.random() * 11) + 1
+    const newPost = document.createElement('div');
+    newPost.classList.add('post')
+    newPost.setAttribute('id', post.id)
 
-    const post = `
-    <div class="post" id="${post.id}">
-        <div class="post__header">
-            <div class="post-meta">                    
-                <div class="post-meta__icon">
-                    <img class="profile-pic" src="${post.author[1]}" alt="${post.author[0]}'s profile picture">                    
-                </div>
-                <div class="post-meta__data">
-                    <div class="post-meta__author">${post.author[1]}</div>
-                    <div class="post-meta__time">${randomMonthAgo} mesi fa</div>
-                </div>                    
-            </div>
-        </div>
-        <div class="post__text">${post.content}</div>
-        <div class="post__image">
-            <img src="${post.media}" alt="">
-        </div>
-        <div class="post__footer">
-            <div class="likes js-likes">
-                <div class="likes__cta">
-                    <a class="like-button  js-like-button" href="#" data-postid="1">
-                        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                        <span class="like-button__label">Mi Piace</span>
-                    </a>
-                </div>
-                <div class="likes__counter">
-                    Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
-                </div>
-            </div> 
-        </div>            
-    </div>
+    const templateLiteralsPost = `
+    
     `;
+
+    newPost.innerHTML = templateLiteralsPost;
+    container.appendChild(newPost);
 
 })
 
@@ -103,6 +80,8 @@ posts.forEach((post, index) => {
 
 
 /* 
+
+<div class="post" id="${post.id}"></div>
 
 <div class="post">
     <div class="post__header">
