@@ -66,15 +66,19 @@ posts.forEach((post, index) => {
     newPost.classList.add('post')
     newPost.setAttribute('id', post.id)
 
+    const today = new Date()
+    const postDate = new Date(post.created)
+    const monthAgo = Math.floor(parseInt((today - postDate) / 1000) / 60 / 60 / 24 / 30)
+
     const templateLiteralsPost = `
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
-                <img class="profile-pic" src="${post.author[1]}" alt="${post.author[0]}'s profile picture">                    
+                <img class="profile-pic" src="${post.author.image}" alt="${post.author.name}'s profile picture">                    
             </div>
             <div class="post-meta__data">
-                <div class="post-meta__author">${post.author[1]}</div>
-                <div class="post-meta__time">${randomMonthAgo} mesi fa</div>
+                <div class="post-meta__author">${post.author.name}</div>
+                <div class="post-meta__time">${monthAgo} mesi fa</div>
             </div>                    
         </div>
     </div>
