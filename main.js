@@ -115,22 +115,30 @@ likeButtons.forEach((button, index) => {
         element.preventDefault();
         button.classList.toggle('like-button--liked');
         
-        previousLike = likeCounter[index].innerText;
+        /* previousLike = likeCounter[index].innerText; */
+        previousLike = posts[index].likes;
         console.log(previousLike)
+        console.log(likeCounter[index].innerText)
         
         likeUp(previousLike, likeCounter[index])
     });
 })
 
 
+
+
+
+
+
 function likeUp(previousLike, likeNow ){
     if(likeNow.innerText == previousLike){
-        return likeNow.innerHTML = likeNow.innerText + 1;
-    }else if(likeNow.innerText == previousLike + 1){
-        return likeNow.innerHTML == likeNow.innerText - 1;
+        likeNow.innerHTML = parseInt(likeNow.innerText) + 1;
+    }else{
+        likeNow.innerHTML = previousLike;
     }
 }
 
+/*  if(likeNow.innerText !== previousLike) */
 
 /* 
 
