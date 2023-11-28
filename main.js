@@ -59,6 +59,13 @@ const posts = [
 const container = document.getElementById('container');
 
 
+posts.forEach((post, index) => {
+
+    const post = '';
+
+})
+
+
 
 
 
