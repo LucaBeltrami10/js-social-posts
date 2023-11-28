@@ -109,15 +109,14 @@ posts.forEach((post, index) => {
 const likeButtons = document.querySelectorAll('a.like-button');
 
 likeButtons.forEach((button) => {
-    button.addEventListener('click', function(){
-        console.log('cliccato')
-        button.classList.toggle('like-button--liked')
-
-    })
+    button.addEventListener('click', function(element){
+        element.preventDefault();
+        button.classList.toggle('like-button--liked');
+    });
 })
 
 
-/* function likeUp(numbersOflikes){
+/* function likeUp(previousLike, ){
     if(numbersOflikeslike + 1){
         return 
     }
