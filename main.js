@@ -61,22 +61,24 @@ const container = document.getElementById('container');
 
 posts.forEach((post, index) => {
 
+    const randomMonthAgo = Math.floor(Math.random() * 11) + 1
+
     const post = `
-    <div class="post">
+    <div class="post" id="${post.id}">
         <div class="post__header">
             <div class="post-meta">                    
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">                    
+                    <img class="profile-pic" src="${post.author[1]}" alt="${post.author[0]}'s profile picture">                    
                 </div>
                 <div class="post-meta__data">
-                    <div class="post-meta__author">Phil Mangione</div>
-                    <div class="post-meta__time">4 mesi fa</div>
+                    <div class="post-meta__author">${post.author[1]}</div>
+                    <div class="post-meta__time">${randomMonthAgo} mesi fa</div>
                 </div>                    
             </div>
         </div>
-        <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
+        <div class="post__text">${post.content}</div>
         <div class="post__image">
-            <img src="https://unsplash.it/600/300?image=171" alt="">
+            <img src="${post.media}" alt="">
         </div>
         <div class="post__footer">
             <div class="likes js-likes">
@@ -87,7 +89,7 @@ posts.forEach((post, index) => {
                     </a>
                 </div>
                 <div class="likes__counter">
-                    Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                    Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
                 </div>
             </div> 
         </div>            
