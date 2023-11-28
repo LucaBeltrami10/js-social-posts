@@ -58,7 +58,6 @@ const posts = [
 
 const container = document.getElementById('container');
 
-
 posts.forEach((post, index) => {
 
     const randomMonthAgo = Math.floor(Math.random() * 11) + 1
@@ -112,13 +111,12 @@ console.log(likeCounter)
 
 likeButtons.forEach((button, index) => {
     button.addEventListener('click', function(element,){
+        /* elimina funzionalità del tag su cui si effettua il click */
         element.preventDefault();
+        
         button.classList.toggle('like-button--liked');
         
-        /* previousLike = likeCounter[index].innerText; */
         previousLike = posts[index].likes;
-        console.log(previousLike)
-        console.log(likeCounter[index].innerText)
         
         likeUp(previousLike, likeCounter[index])
     });
@@ -128,8 +126,11 @@ likeButtons.forEach((button, index) => {
 
 
 
-
-
+/**Funzione per aumento e decremento like
+ * 
+ * @param {*} previousLike // inserire valore like presente in array di oggetti
+ * @param {*} likeNow // inserire tag contenente il valore di like visualizzato in pagina
+ */
 function likeUp(previousLike, likeNow ){
     if(likeNow.innerText == previousLike){
         likeNow.innerHTML = parseInt(likeNow.innerText) + 1;
@@ -138,10 +139,7 @@ function likeUp(previousLike, likeNow ){
     }
 }
 
-/*  if(likeNow.innerText !== previousLike) */
-
-/* 
-
+/*
 <div class="post" id="${post.id}"></div>
 
 <div class="post">
